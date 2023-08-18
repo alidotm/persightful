@@ -12,11 +12,11 @@
 		--popover-foreground: 240 10% 3.9%;
 		--primary: 240 5.9% 10%;
 		--primary-foreground: 0 0% 98%;
-		--secondary: 240 4.8% 95.9%;
+		--secondary: 166 88% 80%;
 		--secondary-foreground: 240 5.9% 10%;
 		--muted: 240 4.8% 95.9%;
 		--muted-foreground: 240 3.8% 46.1%;
-		--accent: 0 89% 65%;
+		--accent: 166 88% 80%;
 		--accent-foreground: 240 5.9% 10%;
 		--destructive: 0 84.2% 60.2%;
 		--destructive-foreground: 0 0% 98%;
@@ -31,7 +31,25 @@
 	* {
 		@apply border-border;
 	}
+
+	::-moz-selection {
+		/* Code for Firefox */
+		color: hsl(var(--accent-foreground));
+		background: hsl(var(--accent));
+	}
+
+	::selection {
+		color: hsl(var(--accent-foreground));
+		background: hsl(var(--accent));
+	}
+
 	body {
 		@apply bg-background text-foreground;
+	}
+}
+
+@layer components {
+	.ring-style {
+		@apply ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
 	}
 }
