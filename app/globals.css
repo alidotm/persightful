@@ -52,4 +52,9 @@
 	.ring-style {
 		@apply ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
 	}
+
+	.text-stroke {
+		text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+			1px 1px 0 black;
+	}
 }

@@ -1,8 +1,9 @@
-import Providers from "@/components/providers";
 import "./globals.css";
 import type { Metadata } from "next";
-import {  Bricolage_Grotesque } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
+import { cn } from "@/lib/utils";
 
 const bricolage_grotesque = Bricolage_Grotesque({ subsets: ["latin"] });
 
@@ -18,11 +19,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={bricolage_grotesque.className}>
-				<Providers>
-					<Header />
-					{children}
-				</Providers>
+			<body className={cn(bricolage_grotesque.className, 'overflow-x-hidden')}>
+				<Header />
+				{children}
+				<Footer />
 			</body>
 		</html>
 	);

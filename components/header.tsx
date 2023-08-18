@@ -2,28 +2,20 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 
-const links = [
+export const links = [
 	{
 		name: "Services",
-		href: "/services",
+		href: "#services",
 	},
 	{
-		name: "Examples",
-		href: "/examples",
-	},
-	{
-		name: "About",
-		href: "/about",
-	},
-	{
-		name: "FAQs",
-		href: "/faqs",
+		name: "Contact",
+		href: "#contact",
 	},
 ];
 
 const Header = () => {
 	return (
-		<header className="w-full bg-background bg-opacity-75 backdrop-blur-lg h-20 flex justify-center items-center">
+		<header className="w-full z-50 sticky top-0 bg-background/80 backdrop-blur h-20 flex justify-center items-center">
 			<div className="container px-4 flex justify-between items-center">
 				<section
 					aria-label="nav-links"
@@ -57,17 +49,9 @@ const Header = () => {
 						</ul>
 					</nav>
 				</section>
-				<section aria-label="contact" className="space-x-3">
+				<section className="space-x-3">
 					<Link
-						href="/contact"
-						className={cn(
-							buttonVariants({ size: "sm", variant: "secondary" })
-						)}
-					>
-						Contact
-					</Link>
-					<Link
-						href="/free-prototype"
+						href="#contact"
 						className={cn(
 							buttonVariants({ size: "sm", variant: "default" })
 						)}
